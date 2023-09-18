@@ -5,16 +5,17 @@ namespace StocksApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly MyService _myService;
-        public HomeController(MyService myService)
+        private readonly FinnHubService _finnHubService;
+        public HomeController(FinnHubService finnHub)
         {
-            _myService = myService;
+            _finnHubService = finnHub;
         }
 
         [Route("/")]
         public async Task<IActionResult> Index()
         {
-            await _myService.method();
+           Dictionary<string, object> responseDictionary =
+                await _finnHubService.GetStockPriceQuote("AAPL");
             return View();
         }
     }

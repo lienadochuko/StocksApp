@@ -1,6 +1,8 @@
 ﻿namespace StocksApp.ServiceContract
 {
-    public class IFinnHubService
+    public interface IFinnHubService
     {
+       Task<Dictionary<string, object>?> 
+            GetStockPriceQuote(string stockSymbol);
     }
 }
