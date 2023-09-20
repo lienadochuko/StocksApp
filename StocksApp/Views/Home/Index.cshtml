@@ -7,7 +7,27 @@
 <div class="box trading-panel">
     <div class="flex trading-panel-flex">
         <div id="stock-price-panel">
-
+            <h1 class="stock-title">@Model.StockSymbol</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Current Price:</td>
+                        <th><small>$</small> <span class="price">@Model.CurrentPrice.ToString()</span></th>
+                </tr>
+                    <tr>
+                        <td>Open Price:</td>
+                        <th><small>$</small>  <span class="price">@Model.OpenPrice.ToString()</span></th>
+                    </tr>
+                    <tr>
+                        <td>Highest Price:</td>
+                        <th><small>$</small>  <span class="price">@Model.HighestPrice</span></th>
+                    </tr>
+                    <tr>
+                        <td>Lowest Price:</td>
+                        <th><small>$</small>  <span class="price">@Model.LowestPrice</span></th>
+                    </tr>
+            </tbody>
+            </table>
         </div>
     </div>
 </div>
